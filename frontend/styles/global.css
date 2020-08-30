@@ -1,0 +1,18 @@
+.home_banner {
+    background-image: url('../images/home_banner.jpg');
+    background-repeat: no-repeat;
+    background-position: 100% 85%;
+    background-size: cover;
+}
+
+.text-black-outline {
+    text-shadow: 
+    -2px -2px 3px #6c757d, 
+    2px -2px 3px #6c757d, 
+    -2px 2px 3px #6c757d, 
+    2px 2px 3px #6c757d !important;
+}
+
+.text-white-outline {
+    text-shadow: -1px -1px 0 #6c757d, 1px -1px 0 #6c757d, -1px 1px 0 #6c757d, 1px 1px 0 #6c757d !important;
+}
