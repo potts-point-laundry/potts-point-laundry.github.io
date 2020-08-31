@@ -1,27 +1,23 @@
 import React from 'react';
-
-import { Container, Jumbotron, Button } from 'react-bootstrap'
-// Import components
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 import NavigationBar from './components/NavigationBar.jsx'
+import Footer from './components/Footer.jsx'
+import HomePage from './pages/Home.jsx'
 
 export default function App() {
     return (
-        <>
+        <Router>
             <NavigationBar />
+            <Switch>
+            <Route path='/' exact><HomePage /></Route>
 
-            <Jumbotron fluid className="home_banner">
-                <Container className="py-5">
-                    <h1 className="text-light text-black-outline ">Like Laundry. Like Never Before.</h1>
-                    <p>
-                        This is a simple hero unit, a simple jumbotron-style component for calling
-                        extra attention to featured content or information.
-  </p>
-                    <p>
-                        <Button variant="primary">Find Us</Button>
-                    </p>
-                </Container>
-            </Jumbotron>
-
-        </>
+            </Switch>
+            <Footer />
+        </Router>
     )
 }

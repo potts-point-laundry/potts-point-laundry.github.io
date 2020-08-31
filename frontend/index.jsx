@@ -1,9 +1,8 @@
-  import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/global.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './app.jsx'
+import App from './App.jsx'
 
 function Index() {
     return (

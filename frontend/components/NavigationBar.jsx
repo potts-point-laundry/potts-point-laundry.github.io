@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
-import { Nav, NavDropdown, Navbar, Container } from 'react-bootstrap'
+import React from 'react'
+import { Nav, Navbar, Container } from 'react-bootstrap'
 
 export default function NavigationBar({bg="dark", variant="dark"}) {
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg={bg} variant={variant}>
+        <Navbar collapseOnSelect expand="lg" bg={bg} variant={variant} className="web-theme-bg-color">
             <Container>
-                <Navbar.Brand href="/">Potts Point Laundry & Dry Cleaning</Navbar.Brand>
+                <Navbar.Brand href="/" className="nav-brand">Potts Point Laundry & Dry Cleaning</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav>
-                        <Nav.Link>SERVICES</Nav.Link>
-                        <Nav.Link>ABOUT US</Nav.Link>
-                        <Nav.Link>CONTACTS</Nav.Link>
-                        <Nav.Link>FIND US</Nav.Link>
+                        <Nav.Link href="/">HOME</Nav.Link>
+                        <Nav.Link href="/services">SERVICES</Nav.Link>
+                        <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
+                        <Nav.Link href="/contacts">CONTACTS</Nav.Link>
+                        <Nav.Link href="/findus">FIND US</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
