@@ -19,7 +19,7 @@
     "bugs": {
         "url": "https://github.com/potts-point-laundry/potts-point-laundry.github.com/issues"
     },
-    "homepage": "https://potts-point-laundry.github.io/src",
+    "homepage": "https://potts-point-laundry.github.io",
     "dependencies": {
         "@material-ui/core": "^5.0.0-alpha.7",
         "@material-ui/icons": "^4.9.1",
