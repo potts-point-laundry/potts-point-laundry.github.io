@@ -43,15 +43,14 @@ export default function Footer() {
                             <Row className="text-right">
                                 <Col sm={12}><h4>Navigation</h4> </Col>
                                 <Col sm={12}><a href="/" className="text-light">Home</a></Col>
-                                <Col sm={12}><a href="/" className="text-light">Services</a></Col>
-                                <Col sm={12}><a href="/" className="text-light">Contacts</a></Col>
-                                <Col sm={12}><a href="/" className="text-light">About Us</a></Col>
-                                <Col sm={12}><a href="/" className="text-light">Where to Find Us</a></Col>
+                                <Col sm={12}><a href="/services" className="text-light">Services</a></Col>
+                                <Col sm={12}><a href="/aboutus" className="text-light">About Us</a></Col>
+                                <Col sm={12}><a href="/findus" className="text-light">Where to Find Us</a></Col>
                             </Row>
                         </Col>
                     </Row>
 
-                    <p className="text-center w-100 copyright-text d-block"><CopyrightIcon /> {new Date().getFullYear()} Potts Point Laundry & Dry Cleaning. All Rights Reserved.</p>
+                    <p className="text-center w-100 copyright-text d-block m-0"><CopyrightIcon /> {new Date().getFullYear()} Potts Point Laundry & Dry Cleaning. All Rights Reserved.</p>
 
                 </Container>
             </Container>

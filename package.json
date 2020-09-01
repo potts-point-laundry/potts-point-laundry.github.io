@@ -7,7 +7,7 @@
         "start": "webpack --mode development",
         "watch": "webpack --mode development --watch",
         "build": "webpack --mode production",
-        "start_server": "serve -s src",
+        "server": "serve -s src",
         "deploy": "npm run build && gh-pages -d src"
     },
     "repository": {

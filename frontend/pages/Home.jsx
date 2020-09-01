@@ -30,13 +30,13 @@ export default function Home() {
     const cardStyle = CardUseStyles()
     return (
         <>
-            <Jumbotron fluid className="home_banner d-flex align-items-center">
+            <Jumbotron fluid className="home_banner d-flex align-items-center m-0">
                 <Container className="text-center">
-                    <h3 className="text-light text-black-outline mb-2">Like Laundry. Like Never Before.</h3>
-                    <Button variant="primary" className="home-banner-button web-theme-bg-color d-flex justify-content-center mx-auto"><ArrowBackIosIcon /><span className="mx-2">Find Us</span><ArrowForwardIosIcon /></Button>
+                    <h3 className="text-light text-black-outline mb-3">Like Laundry. Like Never Before.</h3>
+                    <Button variant="primary" className="home-banner-button web-theme-bg-color mx-auto d-flex justify-content-center align-items-center" href="/findus" style={{width: 150}}><ArrowBackIosIcon /><span className="mx-2">Find Us</span><ArrowForwardIosIcon /></Button>
                 </Container>
             </Jumbotron>
-            <Container>
+            <Container className="my-4">
                 <Row className="d-flex">
                     <Col xs={12} md={6} lg={4} className="mb-4">
                         <Card className={cardStyle.root}>
