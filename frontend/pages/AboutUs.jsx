@@ -18,7 +18,9 @@ export default function AboutUs() {
                         image_list.map((each, i) => {
                             return (
                                 <Carousel.Item key={i}>
-                                    <img src={each} alt="gallery" className="d-block mx-auto" style={{ height: 500, objectFit: "contain" }} />
+                                    <div style={{ height: 400 }} className="d-flex">
+                                        <img src={each} alt="gallery" className="d-block" style={{ width: "100%", objectFit: "scale-down" }} />
+                                    </div> 
                                 </Carousel.Item>
                             )
                         })
