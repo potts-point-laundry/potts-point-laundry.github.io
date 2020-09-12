@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
-
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import PhoneIcon from '@material-ui/icons/Phone';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 export default function FindUs() {
     return (
         <>
@@ -17,7 +19,21 @@ export default function FindUs() {
 
                     </Col>
                     <Col md={4} className="mb-3">
-                        <h1 className="display-4 mb-3" style={{ fontSize: "2rem" }}>Social Media</h1>
+
+                        <Row className="text-center">
+                            <Col xs={12} className="mb-3">
+                                <h1 className="display-4 mb-3 d-flex align-items-center justify-content-center" style={{ fontSize: "2rem" }}><LocationOnIcon fontSize="inherit" className="mr-2" />Find Us</h1>
+                                <p>138 Victoria Street, Potts Point NSW 2011</p>
+                            </Col>
+                            <Col xs={12} className="mb-3">
+                                <h1 className="display-4 mb-3 d-flex align-items-center justify-content-center" style={{ fontSize: "2rem" }}><PhoneIcon fontSize="inherit" className="mr-2" />Contact Us</h1>
+                                <p>Phone: <a href="tel:+0293573660">(02) 9357 3660</a></p>
+                            </Col>
+                            <Col xs={12} className="mb-3">
+                                <h1 className="display-4 mb-3 d-flex align-items-center justify-content-center" style={{ fontSize: "2rem" }}><AccessTimeIcon fontSize="inherit" className="mr-2" />Opening Hours</h1>
+                                <p>Monday - Sunday: 8am - 8pm <br /> Last Wash 7pm</p>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>

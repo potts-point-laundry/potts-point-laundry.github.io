@@ -35,7 +35,6 @@ export default function Footer() {
                             <Col sm={12}><h4>Potts Point Laundry & Dry Cleaning</h4></Col>
                             <Col sm={12}><p className="m-0"><LocationOnIcon /> <a href="https://goo.gl/maps/pwXK4ptWuu8Ezj5U6" className="text-light" target="_blank">138 Victoria Street, Potts Point NSW 2011</a></p></Col>
                             <Col sm={12}><p className="m-0"><PhoneIcon /> <a href="tel:+0293573660" className="text-light">(02) 9357 3660</a></p></Col>
-                            <Col sm={12}><p className="m-0"><EmailIcon /> <a href="mail:admin@example.com" className="text-light">admin@example.com</a></p></Col>
                             <Col sm={12}><p className="m-0"><AccessTimeIcon /> Monday - Sunday: 8am - 8pm | Last Wash 7pm</p></Col>
                         </Col>
                         <Col lg={2} className="footer-nav-2">
@@ -48,8 +47,8 @@ export default function Footer() {
                             </Row>
                         </Col>
                     </Row>
-                    <br />
-                    <p className="text-center w-100 copyright-text d-block m-0"><CopyrightIcon /> {new Date().getFullYear()} Potts Point Laundry & Dry Cleaning. All Rights Reserved.</p>
+
+                    <p className="text-center w-100 copyright-text d-block m-0 mt-2"><CopyrightIcon /> {new Date().getFullYear()} Potts Point Laundry & Dry Cleaning. All Rights Reserved.</p>
 
                 </Container>
             </Container>

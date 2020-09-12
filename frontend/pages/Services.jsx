@@ -46,7 +46,7 @@ export default function Services() {
             <Container className="my-4">
                 <Row>
                     <Col md={4} className="mb-4">
-                        <img src={service1} alt="table" className="mb-3 mx-auto d-block" />
+                        <img src={service1} alt="table" className="mb-3 mx-auto d-block unselectable" />
                         <h3 className="text-center">Laundry Service</h3>
                         <h5 className="text-center font-weight-normal">Always Prepared</h5>
                         <TableContainer component={Paper}>
@@ -73,7 +73,7 @@ export default function Services() {
                         </TableContainer>
                     </Col>
                     <Col md={4} className="mb-4">
-                        <img src={service2} alt="table" className="mb-3 mx-auto d-block" />
+                        <img src={service2} alt="table" className="mb-3 mx-auto d-block unselectable" />
                         <h3 className="text-center">Pressing Service</h3>
                         <h5 className="text-center font-weight-normal">Attention to Detail</h5>
                         <TableContainer component={Paper}>
@@ -110,7 +110,7 @@ export default function Services() {
                         </TableContainer>
                     </Col>
                     <Col md={4} className="mb-4">
-                        <img src={service3} alt="table" className="mb-3 mx-auto d-block" />
+                        <img src={service3} alt="table" className="mb-3 mx-auto d-block unselectable" />
                         <h3 className="text-center">Dry Cleaning</h3>
                         <h5 className="text-center font-weight-normal">Expert Service</h5>
                         <TableContainer component={Paper}>
