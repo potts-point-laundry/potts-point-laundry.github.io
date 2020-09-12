@@ -42,15 +42,15 @@ module.exports = {
             }
         ]
     },
-    // optimization: {
-    //     minimize: true,
-    //     minimizer: [
-    //         new CssMinimizerPlugin(),
-    //         new TerserPlugin({
-    //             test: /\.js(\?.*)?$/i,
-    //         }),
-    //     ],
-    // },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin({
+                test: /\.js(\?.*)?$/i,
+            }),
+        ],
+    },
     output: {
         path: __dirname + '/src',
         filename: 'bundle.js'
