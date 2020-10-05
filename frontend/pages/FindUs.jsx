@@ -31,7 +31,7 @@ export default function FindUs() {
                             </Col>
                             <Col xs={12} className="mb-3">
                                 <h1 className="display-4 mb-3 d-flex align-items-center justify-content-center" style={{ fontSize: "2rem" }}><AccessTimeIcon fontSize="inherit" className="mr-2" />Opening Hours</h1>
-                                <p>Monday - Sunday: 8am - 8pm <br /> Last Wash 7pm</p>
+                                <p>Monday - Sunday: 7am - 9pm <br /> Last Wash 8pm</p>
                             </Col>
                         </Row>
                     </Col>
