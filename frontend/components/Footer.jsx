@@ -35,7 +35,8 @@ export default function Footer() {
                             <Col sm={12}><h4>Potts Point Laundry & Dry Cleaning</h4></Col>
                             <Col sm={12}><p className="m-0"><LocationOnIcon /> <a href="https://goo.gl/maps/pwXK4ptWuu8Ezj5U6" className="text-light" target="_blank">138 Victoria Street, Potts Point NSW 2011</a></p></Col>
                             <Col sm={12}><p className="m-0"><PhoneIcon /> <a href="tel:+0293573660" className="text-light">(02) 9357 3660</a></p></Col>
-                            <Col sm={12}><p className="m-0"><AccessTimeIcon /> Monday - Sunday: 7am - 9pm | Last Wash 8pm</p></Col>
+                            <Col sm={12}><p className="m-0"><AccessTimeIcon /> Monday - Friday: 7am - 9pm | Last Wash 8pm</p></Col>
+                            <Col sm={12}><p className="m-0"><AccessTimeIcon /> Saturday - Sunday: 8am - 9pm | Last Wash 8pm</p></Col>
                         </Col>
                         <Col lg={2} className="footer-nav-2">
                             <Row className="text-right">

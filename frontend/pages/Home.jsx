@@ -59,7 +59,10 @@ export default function Home() {
                             link={"/findus"}
                             cardStyle={cardStyle}
                         >
-                            Potts Point Laundry & Dry Cleaning open 7 days a week from 7 am to 9 pm. We'll make sure you get your laundry done!
+                            Potts Point Laundry & Dry Cleaning open 7 days a week. We'll make sure you get your laundry done!
+                            <br />
+                            <br />
+                            We open at <b>7 am to 9 pm Monday - Friday</b> and <b>8 am - 9 pm Saturday and Sunday</b>.
                             <br />
                             <br />
                             Time may vary on public holidays.
