@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import axios from "axios";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 export default function FindUs() {
+	const [storeDetails, setStoreDetails] = useState(null);
+
+	useEffect(() => {
+		axios.get("/api/store_details.json").then((response) => {
+			setStoreDetails(response.data);
+		});
+	}, []);
+
 	return (
 		<>
 			<Container className="bg-dark text-center text-light p-2" fluid>
@@ -41,7 +50,11 @@ export default function FindUs() {
 									/>
 									Find Us
 								</h1>
-								<p>138 Victoria Street, Potts Point NSW 2011</p>
+								<p>
+									{storeDetails
+										? storeDetails.address
+										: "138 Victoria Street, Potts Point NSW 2011"}
+								</p>
 							</Col>
 							<Col xs={12} className="mb-3">
 								<h1
@@ -56,7 +69,19 @@ export default function FindUs() {
 								</h1>
 								<p>
 									Phone:{" "}
-									<a href="tel:+0293573660">(02) 9357 3660</a>
+									{storeDetails ? (
+										<a
+											href={`tel:+${storeDetails.phone
+												.replace("(", "")
+												.replace(")", "")}`}
+										>
+											{storeDetails.phone}
+										</a>
+									) : (
+										<a href="tel:+0293573660">
+											(02) 9357 3660
+										</a>
+									)}
 								</p>
 							</Col>
 							<Col xs={12} className="mb-3">
@@ -71,8 +96,18 @@ export default function FindUs() {
 									Opening Hours
 								</h1>
 								<p>
-									Monday - Friday: 7am - 9pm <br /> Saturday -
-									Sunday: 8am - 9pm <br /> Last Wash 8pm
+									{storeDetails ? (
+										<>
+											{storeDetails.business_hour} <br />
+											{storeDetails.business_hour2} <br />
+										</>
+									) : (
+										<>
+											Monday - Friday: 7am - 9pm <br />{" "}
+											Saturday - Sunday: 8am - 9pm <br />{" "}
+											Last Wash 8pm
+										</>
+									)}
 								</p>
 							</Col>
 						</Row>
