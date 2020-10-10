@@ -52,7 +52,7 @@ module.exports = {
         ],
     },
     output: {
-        path: __dirname + '/src',
+        path: __dirname + '/docs',
         filename: 'bundle.js'
     }
 };
