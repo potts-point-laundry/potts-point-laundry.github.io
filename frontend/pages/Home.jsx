@@ -83,9 +83,9 @@ export default function Home() {
 							week. We'll make sure you get your laundry done!
 							<br />
 							<br />
-							We open at
-							<b>7 am to 9 pm Monday - Friday</b> and{" "}
-							<b>8 am - 9 pm Saturday and Sunday</b>.
+							We open at <b>
+								7 am to 9 pm Monday - Friday
+							</b> and <b>8 am - 9 pm Saturday and Sunday</b>.
 							<br />
 							<br />
 							Time may vary on public holidays.
