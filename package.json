@@ -6,8 +6,12 @@
     "scripts": {
         "start": "webpack --mode development",
         "watch": "webpack --mode development --watch",
-        "build": "webpack --mode production",
-        "server": "serve -s src"
+        "build": "webpack --mode production && npm run build:sitemap",
+        "server": "serve -s docs",
+        "build:sitemap": "npm run compile:sitemap && npm run run:sitemap && npm run delete:compile:sitemap",
+        "compile:sitemap": "webpack --config lib/webpack.config.js",
+        "run:sitemap": "node lib/compiled/main.js",
+        "delete:compile:sitemap": "rm -rf ./lib/compiled"
     },
     "repository": {
         "type": "git",
