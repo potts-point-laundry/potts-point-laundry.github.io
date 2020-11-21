@@ -21,16 +21,10 @@ export default function FindUs() {
 			<Container className="p-3">
 				<Row>
 					<Col md={8} className="mb-3">
-						<h1
-							className="display-4 mb-3"
-							style={{ fontSize: "2rem" }}
-						>
+						<h1 className="display-4 mb-3" style={{ fontSize: "2rem" }}>
 							Google Map
 						</h1>
-						<div
-							className="bg-secondary w-100"
-							style={{ height: 450 }}
-						>
+						<div className="bg-secondary w-100" style={{ height: 450 }}>
 							<iframe
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.6840819110766!2d151.22078341574533!3d-33.87203172665898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae72b389a571%3A0xccdfb3dfcae3102e!2sPotts%20Point%20Laundry!5e0!3m2!1sen!2sau!4v1598930367650!5m2!1sen!2sau"
 								className="w-100 h-100 border-0"
@@ -44,16 +38,11 @@ export default function FindUs() {
 									className="display-4 mb-3 d-flex align-items-center justify-content-center"
 									style={{ fontSize: "2rem" }}
 								>
-									<LocationOnIcon
-										fontSize="inherit"
-										className="mr-2"
-									/>
+									<LocationOnIcon fontSize="inherit" className="mr-2" />
 									Find Us
 								</h1>
 								<p>
-									{storeDetails
-										? storeDetails.address
-										: "138 Victoria Street, Potts Point NSW 2011"}
+									{storeDetails ? storeDetails.address : "138 Victoria Street, Potts Point NSW 2011"}
 								</p>
 							</Col>
 							<Col xs={12} className="mb-3">
@@ -61,26 +50,17 @@ export default function FindUs() {
 									className="display-4 mb-3 d-flex align-items-center justify-content-center"
 									style={{ fontSize: "2rem" }}
 								>
-									<PhoneIcon
-										fontSize="inherit"
-										className="mr-2"
-									/>
+									<PhoneIcon fontSize="inherit" className="mr-2" />
 									Contact Us
 								</h1>
 								<p>
 									Phone:{" "}
 									{storeDetails ? (
-										<a
-											href={`tel:+${storeDetails.phone
-												.replace("(", "")
-												.replace(")", "")}`}
-										>
+										<a href={`tel:+${storeDetails.phone.replace("(", "").replace(")", "")}`}>
 											{storeDetails.phone}
 										</a>
 									) : (
-										<a href="tel:+0293573660">
-											(02) 9357 3660
-										</a>
+										<a href="tel:+0293573660">(02) 9357 3660</a>
 									)}
 								</p>
 							</Col>
@@ -89,10 +69,7 @@ export default function FindUs() {
 									className="display-4 mb-3 d-flex align-items-center justify-content-center"
 									style={{ fontSize: "2rem" }}
 								>
-									<AccessTimeIcon
-										fontSize="inherit"
-										className="mr-2"
-									/>
+									<AccessTimeIcon fontSize="inherit" className="mr-2" />
 									Opening Hours
 								</h1>
 								<p>
@@ -103,9 +80,8 @@ export default function FindUs() {
 										</>
 									) : (
 										<>
-											Monday - Friday: 7am - 9pm <br />{" "}
-											Saturday - Sunday: 8am - 9pm <br />{" "}
-											Last Wash 8pm
+											Monday - Friday: 7am - 9pm <br /> Saturday - Sunday: 8am - 9pm <br /> Last
+											Wash 8pm
 										</>
 									)}
 								</p>

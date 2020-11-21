@@ -23,17 +23,9 @@ export default function Footer() {
 				<Container className="p-3">
 					<Accordion className="footer-nav mb-2">
 						<Card className="rounded-0 bg-dark border-secondary">
-							<Accordion.Toggle
-								as={Card.Header}
-								eventKey="1"
-								className="border-secondary"
-							>
+							<Accordion.Toggle as={Card.Header} eventKey="1" className="border-secondary">
 								<h4>
-									Navigation{" "}
-									<AddIcon
-										className="float-right"
-										fontSize="large"
-									/>
+									Navigation <AddIcon className="float-right" fontSize="large" />
 								</h4>{" "}
 							</Accordion.Toggle>
 							<Accordion.Collapse eventKey="1">
@@ -45,26 +37,17 @@ export default function Footer() {
 											</a>
 										</Col>
 										<Col sm={12}>
-											<a
-												href="/services"
-												className="text-light"
-											>
+											<a href="/services" className="text-light">
 												Services
 											</a>
 										</Col>
 										<Col sm={12}>
-											<a
-												href="/aboutus"
-												className="text-light"
-											>
+											<a href="/aboutus" className="text-light">
 												About Us
 											</a>
 										</Col>
 										<Col sm={12}>
-											<a
-												href="/findus"
-												className="text-light"
-											>
+											<a href="/findus" className="text-light">
 												Where to Find Us
 											</a>
 										</Col>
@@ -99,17 +82,12 @@ export default function Footer() {
 									{storeDetails ? (
 										<a
 											className="text-light"
-											href={`tel:+${storeDetails.phone
-												.replace("(", "")
-												.replace(")", "")}`}
+											href={`tel:+${storeDetails.phone.replace("(", "").replace(")", "")}`}
 										>
 											{storeDetails.phone}
 										</a>
 									) : (
-										<a
-											className="text-light"
-											href="tel:+0293573660"
-										>
+										<a className="text-light" href="tel:+0293573660">
 											(02) 9357 3660
 										</a>
 									)}
@@ -162,8 +140,8 @@ export default function Footer() {
 					</Row>
 
 					<p className="text-center w-100 copyright-text d-block m-0 mt-2">
-						<CopyrightIcon /> Copyright {new Date().getFullYear()}{" "}
-						Potts Point Laundry & Dry Cleaning. All Rights Reserved.
+						<CopyrightIcon /> Copyright {new Date().getFullYear()} Potts Point Laundry & Dry Cleaning. All
+						Rights Reserved.
 					</p>
 				</Container>
 			</Container>

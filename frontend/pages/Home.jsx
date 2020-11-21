@@ -31,14 +31,9 @@ export default function Home() {
 	const cardStyle = CardUseStyles();
 	return (
 		<>
-			<Jumbotron
-				fluid
-				className="home_banner d-flex align-items-center m-0"
-			>
+			<Jumbotron fluid className="home_banner d-flex align-items-center m-0">
 				<Container className="text-center">
-					<h3 className="text-light text-black-outline mb-3">
-						Like Laundry. Like Never Before.
-					</h3>
+					<h3 className="text-light text-black-outline mb-3">Like Laundry. Like Never Before.</h3>
 					<Button
 						variant="primary"
 						className="home-banner-button web-theme-bg-color mx-auto d-flex justify-content-center align-items-center"
@@ -60,9 +55,8 @@ export default function Home() {
 							title={"Affordable Services"}
 							cardStyle={cardStyle}
 						>
-							The rates at Potts Point Laundry & Dry Cleaning are
-							unbeatable. We offer high-quality services while
-							being affordable.
+							The rates at Potts Point Laundry & Dry Cleaning are unbeatable. We offer high-quality
+							services while being affordable.
 							<br />
 							<br />
 							Come by and see it for yourself at{" "}
@@ -73,19 +67,12 @@ export default function Home() {
 						</CardHome>
 					</Col>
 					<Col xs={12} md={6} lg={4} className="mb-4">
-						<CardHome
-							image={severDaysImage}
-							title={"7 Days a Week"}
-							link={"/findus"}
-							cardStyle={cardStyle}
-						>
-							Potts Point Laundry & Dry Cleaning open 7 days a
-							week. We'll make sure you get your laundry done!
+						<CardHome image={severDaysImage} title={"7 Days a Week"} link={"/findus"} cardStyle={cardStyle}>
+							Potts Point Laundry & Dry Cleaning open 7 days a week. We'll make sure you get your laundry
+							done!
 							<br />
 							<br />
-							We open at <b>
-								7 am to 9 pm Monday - Friday
-							</b> and <b>8 am - 9 pm Saturday and Sunday</b>.
+							We open at <b>7 am to 9 pm Monday - Friday</b> and <b>8 am - 9 pm Saturday and Sunday</b>.
 							<br />
 							<br />
 							Time may vary on public holidays.
@@ -101,13 +88,11 @@ export default function Home() {
 							cardStyle={cardStyle}
 							openNewTab={true}
 						>
-							Potts Point Laundry & Dry Cleaning have one of the
-							highest review rating in Potts Point and Kings
-							Cross.
+							Potts Point Laundry & Dry Cleaning have one of the highest review rating in Potts Point and
+							Kings Cross.
 							<br />
 							<br />
-							We ensure our customers are happy and satisfy with
-							our services.
+							We ensure our customers are happy and satisfy with our services.
 						</CardHome>
 					</Col>
 				</Row>

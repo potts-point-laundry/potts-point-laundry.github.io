@@ -11,13 +11,7 @@ export default function NavigationBar({ bg = "dark", variant = "dark" }) {
 	];
 
 	return (
-		<Navbar
-			collapseOnSelect
-			expand="lg"
-			bg={bg}
-			variant={variant}
-			className="web-theme-bg-color"
-		>
+		<Navbar collapseOnSelect expand="lg" bg={bg} variant={variant} className="web-theme-bg-color">
 			<Container>
 				<Navbar.Brand href="/" className="nav-brand">
 					Potts Point Laundry & Dry Cleaning
@@ -30,11 +24,7 @@ export default function NavigationBar({ bg = "dark", variant = "dark" }) {
 								<Nav.Link
 									key={i}
 									href={each.path}
-									active={
-										window.location.pathname === each.path
-											? true
-											: false
-									}
+									active={window.location.pathname === each.path ? true : false}
 								>
 									{each.name.toUpperCase()}
 								</Nav.Link>
