@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Jumbotron, Button, Container, Row, Col } from "react-bootstrap";
 
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
@@ -29,6 +30,15 @@ import startingImage from "../images/starting.jpg";
 
 export default function Home() {
 	const cardStyle = CardUseStyles();
+
+	const [storeDetails, setStoreDetails] = useState(null);
+
+	useEffect(() => {
+		axios.get("/api/store_details.json").then((response) => {
+			setStoreDetails(response.data);
+		});
+	}, []);
+
 	return (
 		<>
 			<Jumbotron fluid className="home_banner d-flex align-items-center m-0">
@@ -72,7 +82,9 @@ export default function Home() {
 							done!
 							<br />
 							<br />
-							We open at <b>7 am to 9 pm Monday - Friday</b> and <b>8 am - 9 pm Saturday and Sunday</b>.
+							Our business hour:
+							<b className="d-block">{storeDetails ? storeDetails.business_hour : null}</b>
+							<b className="d-block">{storeDetails ? storeDetails.business_hour2 : null}</b>
 							<br />
 							<br />
 							Time may vary on public holidays.
