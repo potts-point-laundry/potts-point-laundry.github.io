@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@400;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo-color {
+	color: #30377b;
+}
+
+.font-family-lato {
+	font-family: "Lato", sans-serif;
+}
+
+.font-family-roboto {
+	font-family: "Roboto", sans-serif;
+}
+
+.font-family-roboto-condensed {
+	font-family: "Roboto Condensed", sans-serif;
+}
+
+.custom-button {
+	/* background-color: #f1b503; */
+	height: 45px;
+}
+
+
+.banner-image {
+	margin-left: auto;
+	width: 100%;
+	max-width: 400px;
+}
