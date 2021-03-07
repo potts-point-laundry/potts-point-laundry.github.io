@@ -1,7 +1,8 @@
 {
 	"name": "potts-point-laundry.github.io",
-	"version": "0.2.0",
+	"version": "2.0.0",
 	"private": true,
+	"homepage": "https://potts-point-laundry.github.io",
 	"dependencies": {
 		"drive-db": "^6.0.1",
 		"react": "^17.0.1",
@@ -14,7 +15,7 @@
 	},
 	"scripts": {
 		"start": "craco start",
-		"build": "craco build",
+		"build": "craco build && mv build docs",
 		"test": "craco test",
 		"eject": "react-scripts eject"
 	},
