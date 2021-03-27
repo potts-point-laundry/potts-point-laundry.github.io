@@ -5,38 +5,40 @@ import CoinIcon from "../../images/coin-icon.png";
 import OpenIcon from "../../images/open-icon.png";
 import GoogleIcon from "../../images/google-icon.png";
 
+import LocationImage from "../../images/location.png";
+import WashingMachineImage from "../../images/washing-machine.png";
+import HandShakeImage from "../../images/handshake.jpeg";
+
 export default function HomePage() {
 	return (
 		<div className="w-full">
 			<Banner />
-			<div className="w-100 py-14 bg-indigo-900" >
-				<div className="container mx-auto text-white">
-					<div className="grid grid-cols-3 gap-20">
-						{[
-							{
-								iconSrc: CoinIcon,
-								heading: "Affordable Services",
-								content: `High quality services does not mean being expensive. \n\nOur rates are affordable while offering exceptional service.`,
-								buttonText: "Services / Pricing",
-								buttonLink: "/services",
-							},
-							{
-								iconSrc: OpenIcon,
-								heading: "Open 7 Days",
-								content: `Any day any time. Have your laundry done on time. \n\nTime may vary on public holidays.`,
-								buttonText: "Opening Hours",
-								buttonLink: "#",
-							},
-							{
-								iconSrc: GoogleIcon,
-								heading: "4+ Star Review",
-								content: `We have one of the highest review rating in Potts Point and Kings Cross. \n\nWe ensure our customers are happy and satisfy with our services.`,
-								buttonText: "Reviews",
-								buttonLink: "http://shorturl.at/csAV1",
-							},
-						].map((each, i) => {
-							return <Feature {...each} key={i} />;
-						})}
+			<Features />
+			<div className="container mx-auto py-10 px-20">
+				<div className="grid grid-cols-2 gap-10">
+					<div>
+						<img src={LocationImage} alt="" className="w-9/12 block mx-auto" />
+					</div>
+					<div>
+						<h1 className="font-family-roboto-condensed font-semibold text-4xl text-indigo-800">
+							Convenient Location
+						</h1>
+					</div>
+					<div>
+						<img src={WashingMachineImage} alt="" className="w-9/12 block mx-auto" />
+					</div>
+					<div>
+						<h1 className="font-family-roboto-condensed font-semibold text-4xl text-indigo-800">
+							Professional Services With High Standards
+						</h1>
+					</div>
+					<div>
+						<img src={HandShakeImage} alt="" className="w-9/12 block mx-auto" />
+					</div>
+					<div>
+						<h1 className="font-family-roboto-condensed font-semibold text-4xl text-indigo-800">
+							Working With Businesses
+						</h1>
 					</div>
 				</div>
 			</div>
@@ -61,16 +63,25 @@ const Banner = () => {
 								commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem
 								imperdiet. Nunc ut sem vitae risus tristique posuere.
 							</p>
-							<button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-14 mt-6 uppercase">
-								More
-							</button>
+							<div>
+								<a href="/services" className="mr-4">
+									<button className=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-14 mt-6 uppercase">
+										Our Services
+									</button>
+								</a>
+								<a href="/find">
+									<button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-14 mt-6 uppercase">
+										Find Us
+									</button>
+								</a>
+							</div>
 						</div>
 					</div>
 					<div>
 						<img
 							src={BannerImage}
 							alt="https://www.freepik.com/vectors/abstract"
-							className="banner-image"
+							className="banner-image-home"
 						/>
 					</div>
 				</div>
@@ -99,6 +110,42 @@ const Feature = (props: FeatureProps) => {
 						{props.buttonText}
 					</button>
 				</a>
+			</div>
+		</div>
+	);
+};
+
+const Features = () => {
+	return (
+		<div className="w-100 py-14 bg-indigo-900">
+			<div className="container mx-auto text-white">
+				<div className="grid grid-cols-3 gap-20">
+					{[
+						{
+							iconSrc: CoinIcon,
+							heading: "Affordable Services",
+							content: `High quality services does not mean being expensive. \n\nOur rates are affordable while offering exceptional service.`,
+							buttonText: "Services / Pricing",
+							buttonLink: "/services",
+						},
+						{
+							iconSrc: OpenIcon,
+							heading: "Open 7 Days",
+							content: `Any day any time. Have your laundry done on time. \n\nTime may vary on public holidays.`,
+							buttonText: "Opening Hours",
+							buttonLink: "/find",
+						},
+						{
+							iconSrc: GoogleIcon,
+							heading: "4+ Star Review",
+							content: `We have one of the highest review rating in Potts Point and Kings Cross. \n\nWe ensure our customers are happy and satisfy with our services.`,
+							buttonText: "Reviews",
+							buttonLink: "http://shorturl.at/csAV1",
+						},
+					].map((each, i) => {
+						return <Feature {...each} key={i} />;
+					})}
+				</div>
 			</div>
 		</div>
 	);

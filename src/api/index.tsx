@@ -1,31 +1,56 @@
 import drive from "drive-db";
+import _ from "lodash";
 
-export const GetGlobalMessage = (): string => {
-	return "Sensitive skin laundry powder available upon request.";
-};
-
-export const GetShopDetails = (): Promise<[IShopDetails]> => {
+const fetchFromGoogleSheets = (tab: number) => {
 	return drive({
 		sheet: "1hbV7p_sUK692HcxhET95Fhib2Px4yOtyjK0BAvgMffU",
-		tab: "1",
+		tab: tab.toString(),
 		cache: 3600,
 	});
 };
 
-export interface IShopDetails {
-	id: string;
-	name: string;
-	value: string;
-	comment: string;
+export const GetShopDetails = async () => {
+	const shopDetails: [IShopDetails] = await fetchFromGoogleSheets(1);
+
+	if (shopDetails) {
+		return _.chain(shopDetails).keyBy("name").mapValues("value").value();
+	}
+};
+
+export const GetShopPricing = async (): Promise<IShopPrices | null> => {
+	const shopPrices: [IShopPrice] = await fetchFromGoogleSheets(2);
+
+	if (shopPrices) {
+		const group = _.groupBy(shopPrices, (shopPrice) => {
+			return shopPrice.category;
+		});
+
+		let result: IShopPrices = {
+			dry_cleaning: group.dry_cleaning,
+			laundry: group.laundry,
+			pressing: group.pressing,
+		};
+
+		return result;
+	}
+
+	return null;
+};
+
+export interface IShopPrices {
+	dry_cleaning: IShopPrice[];
+	laundry: IShopPrice[];
+	pressing: IShopPrice[];
 }
 
-export const getValueByName = (shopDetails: [IShopDetails], target: string): string => {
-	shopDetails.map((detail: IShopDetails) => {
-		if (detail.name === target) {
-			console.log(detail, target, detail.value);
-			return detail.value;
-		}
-	});
+interface IShopDetails {
+	name: string;
+	value: string;
+}
 
-	return "";
-};
+export interface IShopPrice {
+	category: string;
+	name: string;
+	price: string;
+	description: string;
+}

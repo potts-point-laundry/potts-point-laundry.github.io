@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { GetShopDetails } from "../api";
 
-interface Props {
-	message: string;
-}
+export default function GlobalMessage() {
+	const [globalMessage, setGlobalMessage] = useState<string>("");
 
-export default function GlobalMessage(props: Props) {
+	useEffect(() => {
+		async function fetchData() {
+			const response = await GetShopDetails();
+			response && setGlobalMessage(response["global_message"]);
+		}
+
+		fetchData();
+	}, []);
 	return (
-		<div
-			id="global_message"
-			className="w-full font-family-roboto-condensed text-white text-lg text-center bg-red-400 py-2">
-			{props.message}
-		</div>
+		<>
+			{globalMessage && (
+				<div
+					id="global_message"
+					className="w-full font-family-roboto-condensed text-white text-lg text-center bg-red-400 py-2">
+					{globalMessage}
+				</div>
+			)}
+		</>
 	);
 }
