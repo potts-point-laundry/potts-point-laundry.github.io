@@ -118,14 +118,14 @@ const Features = () => {
 						{
 							iconSrc: CoinIcon,
 							heading: "Affordable Services",
-							content: `High quality services does not mean being expensive. \n\nOur rates are affordable while offering exceptional service.`,
+							content: `High quality services does not mean expensive. \n\nOur rates are affordable while offering exceptional service.`,
 							buttonText: "Services / Pricing",
 							buttonLink: "/services",
 						},
 						{
 							iconSrc: OpenIcon,
 							heading: "Open 7 Days",
-							content: `Any day any time. Have your laundry done on time. \n\nTime may vary on public holidays.`,
+							content: `Any day any time. Get your laundry done on time. \n\nTime may vary on public holidays.`,
 							buttonText: "Opening Hours",
 							buttonLink: "/find",
 						},

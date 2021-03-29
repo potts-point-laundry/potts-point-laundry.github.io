@@ -9,6 +9,9 @@ import { Helmet } from "react-helmet-async";
 
 const BannerImageContainer = styled.div`
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.4)), url(${BannerImage});
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 `;
 
 export default function ServicePage() {
@@ -25,7 +28,7 @@ export default function ServicePage() {
 
 	return (
 		<>
-			<BannerImageContainer id="banner" className="banner-image flex justify-center items-center h-96">
+			<BannerImageContainer id="banner" className="flex justify-center items-center h-96">
 				<h1 className="font-family-lato font-semibold text-5xl text-center text-gray-50 banner-image-text">
 					Price Guides
 				</h1>
