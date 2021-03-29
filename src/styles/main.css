@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.logo-color {
-	color: #30377b;
-}
-
 .font-family-lato {
 	font-family: "Lato", sans-serif;
 }
@@ -23,22 +19,10 @@
 	font-family: "Open Sans", sans-serif;
 }
 
-.custom-button {
-	/* background-color: #f1b503; */
-	height: 45px;
-}
-
-.banner-image-home {
-	margin-left: auto;
-	width: 100%;
-	max-width: 400px;
-}
-
 .banner-image {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	height: 350px;
 }
 
 .banner-image-text {

@@ -9,8 +9,8 @@ export default function Footer() {
 	return (
 		<div id="footer" className="w-full pt-10 pb-4 border-t-8 border-indigo-900">
 			<div className="container mx-auto">
-				<div className="grid grid-cols-6 gap-10 auto-cols-max">
-					<div className="col-span-4">
+				<div className="grid gap-10 grid-cols-6 auto-cols-max p-2 md:p-0">
+					<div className="col-span-6 md:col-span-4">
 						<Logo />
 						<div className="font-family-roboto-condensed text-xl font-normal mt-2">
 							<a
@@ -24,15 +24,15 @@ export default function Footer() {
 							<h1 className="text-base">Last wash - 1 hour before closing.</h1>
 						</div>
 					</div>
-					<div className="font-sans text-left text-xl ml-auto">
+					<div className="font-sans text-left text-xl col-span-3 md:col-span-1 md:ml-auto">
 						<h1 className="font-semibold pb-2">Information</h1>
 						<div className="grid grid-rows-3 gap-1">
 							<a className="text-gray-600 hover:text-purple-600" href="/">
 								Home
 							</a>
-							{/* <a className="text-gray-600 hover:text-purple-600" href="/about">
+							<a className="text-gray-600 hover:text-purple-600" href="/about">
 								About
-							</a> */}
+							</a>
 							<a className="text-gray-600 hover:text-purple-600" href="/services">
 								Services
 							</a>
@@ -41,7 +41,7 @@ export default function Footer() {
 							</a>
 						</div>
 					</div>
-					<div className="font-sans text-left text-xl ml-auto">
+					<div className="font-sans text-left text-xl col-span-3 md:col-span-1 md:ml-auto">
 						<h1 className="font-semibold pb-2">Contact</h1>
 						<div className="grid grid-rows-3 gap-1">
 							{storeData && (

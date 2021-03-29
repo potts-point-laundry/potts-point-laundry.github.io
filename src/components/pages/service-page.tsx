@@ -5,7 +5,7 @@ import BannerImage from "../../images/service-banner.jpg";
 import WashIcon from "../../images/wash-icon.png";
 import IronIcon from "../../images/iron-icon.png";
 import DryCleanIcon from "../../images/dry-cleaning-icon.png";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const BannerImageContainer = styled.div`
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.4)), url(${BannerImage});
@@ -24,34 +24,36 @@ export default function ServicePage() {
 	}, []);
 
 	return (
-		<div className="container mx-auto pb-14">
-			<BannerImageContainer id="banner" className="banner-image flex justify-center items-center">
+		<>
+			<BannerImageContainer id="banner" className="banner-image flex justify-center items-center h-96">
 				<h1 className="font-family-lato font-semibold text-5xl text-center text-gray-50 banner-image-text">
 					Price Guides
 				</h1>
 			</BannerImageContainer>
-			<div>
-				<div className="flex items-center py-4">
-					<img src={WashIcon} alt="https://icons8.com/" className="mr-3 w-12" />
-					<h1 className="font-family-roboto text-2xl">Laundry</h1>
+			<div className="container mx-auto pt-6 pb-14">
+				<div>
+					<div className="flex items-center py-4">
+						<img src={WashIcon} alt="https://icons8.com/" className="mr-3 w-12" />
+						<h1 className="font-family-roboto text-2xl">Laundry</h1>
+					</div>
+					{shopPrices && <RenderTable data={shopPrices.laundry} />}
 				</div>
-				{shopPrices && <RenderTable data={shopPrices.laundry} />}
-			</div>
-			<div>
-				<div className="flex items-center py-4">
-					<img src={IronIcon} alt="https://icons8.com/" className="mr-3 w-12" />
-					<h1 className="font-family-roboto text-2xl">Pressing</h1>
+				<div>
+					<div className="flex items-center py-4">
+						<img src={IronIcon} alt="https://icons8.com/" className="mr-3 w-12" />
+						<h1 className="font-family-roboto text-2xl">Pressing</h1>
+					</div>
+					{shopPrices && <RenderTable data={shopPrices.pressing} />}
 				</div>
-				{shopPrices && <RenderTable data={shopPrices.pressing} />}
-			</div>
-			<div>
-				<div className="flex items-center py-4">
-					<img src={DryCleanIcon} alt="https://icons8.com/" className="mr-3 w-12" />
-					<h1 className="font-family-roboto text-2xl">Dry Cleaning</h1>
+				<div>
+					<div className="flex items-center py-4">
+						<img src={DryCleanIcon} alt="https://icons8.com/" className="mr-3 w-12" />
+						<h1 className="font-family-roboto text-2xl">Dry Cleaning</h1>
+					</div>
+					{shopPrices && <RenderTable data={shopPrices.dry_cleaning} />}
 				</div>
-				{shopPrices && <RenderTable data={shopPrices.dry_cleaning} />}
 			</div>
-		</div>
+		</>
 	);
 }
 
