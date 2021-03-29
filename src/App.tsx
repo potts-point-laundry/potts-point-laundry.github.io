@@ -21,15 +21,15 @@ export default function App() {
 	}, []);
 
 	return (
-		<HelmetProvider>
-			<ApiStoreDetailsContext.Provider value={storeData}>
-				<Router>
+		<Router>
+			<HelmetProvider>
+				<ApiStoreDetailsContext.Provider value={storeData}>
 					<NavigationBar />
 					<GlobalMessage />
 					<Routes />
 					<Footer />
-				</Router>
-			</ApiStoreDetailsContext.Provider>
-		</HelmetProvider>
+				</ApiStoreDetailsContext.Provider>
+			</HelmetProvider>
+		</Router>
 	);
 }
