@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ApiStoreDetailsContext } from "../../context/ApiDataContext";
 import BannerImage from "../../images/findus-banner.jpg";
 import { Helmet } from "react-helmet-async";
+import { findValue, GetShopDetails, IShopDetails } from "../../api";
 
 const BannerImageContainer = styled.div`
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.4)), url(${BannerImage});
@@ -12,7 +12,16 @@ const BannerImageContainer = styled.div`
 `;
 
 export default function FindPage() {
-	const storeData: { [key: string]: string } = useContext(ApiStoreDetailsContext);
+	const [storeData, setStoreData] = useState<IShopDetails[]>();
+
+	useEffect(() => {
+		async function fetchData() {
+			const response = await GetShopDetails();
+			response && setStoreData(response);
+		}
+
+		fetchData();
+	}, []);
 
 	return (
 		<>
@@ -32,11 +41,13 @@ export default function FindPage() {
 							<p className="pb-4">
 								We are 3 minute walk from King's Cross station on Victoria Street, Potts Point. Our
 								contact number is{" "}
-								<a
-									href={`tel:${storeData.contact_number}`}
-									className="text-blue-400 hover:text-blue-600">
-									{storeData.contact_number}
-								</a>
+								{storeData && (
+									<a
+										href={`tel:${findValue(storeData, "contact_number")}`}
+										className="text-blue-400 hover:text-blue-600">
+										{findValue(storeData, "contact_number")}
+									</a>
+								)}
 								.
 							</p>
 
@@ -47,7 +58,15 @@ export default function FindPage() {
 								</div>
 								<div>
 									<span className="block pb-2">Our opening hour is:</span>
-									<p className="whitespace-pre-line italic leading-7">{`Monday - Friday: ${storeData.mon_fri}\nSaturday - Sunday: ${storeData.sat_sun}\nLast wash is 1 hour before closing.`}</p>
+									{storeData && (
+										<p className="whitespace-pre-line italic leading-7">{`Monday - Friday: ${findValue(
+											storeData!,
+											"mon_fri"
+										)}\nSaturday - Sunday: ${findValue(
+											storeData!,
+											"sat_sun"
+										)}\nLast wash is 1 hour before closing.`}</p>
+									)}
 								</div>
 							</div>
 						</div>

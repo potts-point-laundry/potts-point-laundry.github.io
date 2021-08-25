@@ -1,10 +1,21 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "./logo-component";
 
-import { ApiStoreDetailsContext } from "../context/ApiDataContext";
+import { findValue, GetShopDetails, IShopDetails } from "../api";
 
 export default function Footer() {
-	const storeData: { [key: string]: string } = useContext(ApiStoreDetailsContext);
+	// const storeData: IShopDetails[] = GetShopDetails()
+
+	const [storeData, setStoreData] = useState<IShopDetails[]>();
+
+	useEffect(() => {
+		async function fetchData() {
+			const response = await GetShopDetails();
+			response && setStoreData(response);
+		}
+
+		fetchData();
+	}, []);
 
 	return (
 		<div id="footer" className="w-full pt-10 pb-4 border-t-8 border-indigo-900">
@@ -19,8 +30,8 @@ export default function Footer() {
 								target="__blank">
 								<h1>138 Victoria Street, Potts Point NSW 2011</h1>
 							</a>
-							{storeData && <h1>Monday - Friday: {storeData.mon_fri}</h1>}
-							{storeData && <h1>Saturday - Sunday: {storeData.sat_sun}</h1>}
+							{storeData && <h1>Monday - Friday: {findValue(storeData, "mon_fri")}</h1>}
+							{storeData && <h1>Saturday - Sunday: {findValue(storeData, "sat_sun")}</h1>}
 							<h1 className="text-base">Last wash - 1 hour before closing.</h1>
 						</div>
 					</div>
@@ -47,8 +58,8 @@ export default function Footer() {
 							{storeData && (
 								<a
 									className="text-gray-600 hover:text-purple-600"
-									href={`tel:${storeData["contact_number"]}`}>
-									{storeData["contact_number"]}
+									href={`tel:${findValue(storeData, "contact_number")}`}>
+									{findValue(storeData, "contact_number")}
 								</a>
 							)}
 						</div>
@@ -56,16 +67,6 @@ export default function Footer() {
 				</div>
 			</div>
 			<div id="copyright-text" className="text-center font-sans text-base pt-4">
-				<h1>
-					Made by{" "}
-					<a
-						href="https://jimmyruann.github.io/"
-						className="text-blue-400 : hover:text-blue-600"
-						target="__blank">
-						Jimmy Ruan
-					</a>
-					.
-				</h1>
 				<h1>© Copyright {new Date().getFullYear()} Potts Point Laundry & Dry Cleaning. All Rights Reserved.</h1>
 			</div>
 		</div>

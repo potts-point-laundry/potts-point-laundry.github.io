@@ -1,24 +1,18 @@
-import drive from "drive-db";
 import _ from "lodash";
+import axios from "axios";
 
-const fetchFromGoogleSheets = (tab: number) => {
-	return drive({
-		sheet: "1hbV7p_sUK692HcxhET95Fhib2Px4yOtyjK0BAvgMffU",
-		tab: tab.toString(),
-		cache: 3600,
+export const fetchFromAPI = (): Promise<APIData> => {
+	return axios.get("/data.json").then((response) => {
+		return response.data;
 	});
 };
 
-export const GetShopDetails = async () => {
-	const shopDetails: [IShopDetails] = await fetchFromGoogleSheets(1);
-
-	if (shopDetails) {
-		return _.chain(shopDetails).keyBy("name").mapValues("value").value();
-	}
+export const GetShopDetails = async (): Promise<IShopDetails[]> => {
+	return (await fetchFromAPI()).store_details;
 };
 
 export const GetShopPricing = async (): Promise<IShopPrices | null> => {
-	const shopPrices: [IShopPrice] = await fetchFromGoogleSheets(2);
+	const shopPrices: IShopPrice[] = (await fetchFromAPI()).pricing;
 
 	if (shopPrices) {
 		const group = _.groupBy(shopPrices, (shopPrice) => {
@@ -37,13 +31,18 @@ export const GetShopPricing = async (): Promise<IShopPrices | null> => {
 	return null;
 };
 
+export interface APIData {
+	store_details: IShopDetails[];
+	pricing: IShopPrice[];
+}
+
 export interface IShopPrices {
 	dry_cleaning: IShopPrice[];
 	laundry: IShopPrice[];
 	pressing: IShopPrice[];
 }
 
-interface IShopDetails {
+export interface IShopDetails {
 	name: string;
 	value: string;
 }
@@ -54,3 +53,13 @@ export interface IShopPrice {
 	price: string;
 	description: string;
 }
+
+export const findValue = (array: IShopDetails[], name: string): string => {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].name === name) {
+			return array[i].value;
+		}
+	}
+
+	return "";
+};

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GetShopDetails } from "../api";
+import { findValue, GetShopDetails } from "../api";
 
 export default function GlobalMessage() {
 	const [globalMessage, setGlobalMessage] = useState<string>("");
@@ -7,7 +7,9 @@ export default function GlobalMessage() {
 	useEffect(() => {
 		async function fetchData() {
 			const response = await GetShopDetails();
-			response && setGlobalMessage(response["global_message"]);
+			console.log(response);
+
+			response && setGlobalMessage(findValue(response, "global_message"));
 		}
 
 		fetchData();
