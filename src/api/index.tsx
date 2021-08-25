@@ -1,9 +1,9 @@
 import _ from "lodash";
-import axios from "axios";
+import dataJson  from "./data.json";
 
 export const fetchFromAPI = (): Promise<APIData> => {
-	return axios.get("/data.json").then((response) => {
-		return response.data;
+	return new Promise((resolve) => {
+		resolve(dataJson);
 	});
 };
 
