@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@400;500&Open+Sans:wght@400;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.logo-color {
-	color: #30377b;
-}
 
 .font-family-lato {
 	font-family: "Lato", sans-serif;
@@ -19,14 +15,10 @@
 	font-family: "Roboto Condensed", sans-serif;
 }
 
-.custom-button {
-	/* background-color: #f1b503; */
-	height: 45px;
+.font-family-open-sans {
+	font-family: "Open Sans", sans-serif;
 }
 
-
-.banner-image {
-	margin-left: auto;
-	width: 100%;
-	max-width: 400px;
+.banner-image-text {
+	text-shadow: 0px 2px 10px #424949;
 }

@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.daf07288.chunk.css",
-    "main.js": "/static/js/main.160c9388.chunk.js",
-    "main.js.map": "/static/js/main.160c9388.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.740ac739.js",
-    "runtime-main.js.map": "/static/js/runtime-main.740ac739.js.map",
-    "static/js/2.a5afe92f.chunk.js": "/static/js/2.a5afe92f.chunk.js",
-    "static/js/2.a5afe92f.chunk.js.map": "/static/js/2.a5afe92f.chunk.js.map",
-    "static/js/3.8c8b26ea.chunk.js": "/static/js/3.8c8b26ea.chunk.js",
-    "static/js/3.8c8b26ea.chunk.js.map": "/static/js/3.8c8b26ea.chunk.js.map",
+    "main.css": "/static/css/main.c7af0870.chunk.css",
+    "main.js": "/static/js/main.4f0e7330.chunk.js",
+    "main.js.map": "/static/js/main.4f0e7330.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5a933dd1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5a933dd1.js.map",
+    "static/js/2.e8592580.chunk.js": "/static/js/2.e8592580.chunk.js",
+    "static/js/2.e8592580.chunk.js.map": "/static/js/2.e8592580.chunk.js.map",
+    "static/js/3.2b56840e.chunk.js": "/static/js/3.2b56840e.chunk.js",
+    "static/js/3.2b56840e.chunk.js.map": "/static/js/3.2b56840e.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.daf07288.chunk.css.map": "/static/css/main.daf07288.chunk.css.map",
-    "static/js/2.a5afe92f.chunk.js.LICENSE.txt": "/static/js/2.a5afe92f.chunk.js.LICENSE.txt",
-    "static/media/finddus-banner.6ca03223.jpg": "/static/media/finddus-banner.6ca03223.jpg",
+    "static/css/main.c7af0870.chunk.css.map": "/static/css/main.c7af0870.chunk.css.map",
+    "static/js/2.e8592580.chunk.js.LICENSE.txt": "/static/js/2.e8592580.chunk.js.LICENSE.txt",
+    "static/media/findus-banner.6ca03223.jpg": "/static/media/findus-banner.6ca03223.jpg",
+    "static/media/service-banner.93781c74.jpg": "/static/media/service-banner.93781c74.jpg",
+    "static/media/store_front.48e408f3.jpg": "/static/media/store_front.48e408f3.jpg",
     "static/media/washing.55e063d5.png": "/static/media/washing.55e063d5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.740ac739.js",
-    "static/js/2.a5afe92f.chunk.js",
-    "static/css/main.daf07288.chunk.css",
-    "static/js/main.160c9388.chunk.js"
+    "static/js/runtime-main.5a933dd1.js",
+    "static/js/2.e8592580.chunk.js",
+    "static/css/main.c7af0870.chunk.css",
+    "static/js/main.4f0e7330.chunk.js"
   ]
 }
