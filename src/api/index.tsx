@@ -1,10 +1,12 @@
 import _ from "lodash";
-import dataJson  from "./data.json";
+import axios from "axios";
 
 export const fetchFromAPI = (): Promise<APIData> => {
-	return new Promise((resolve) => {
-		resolve(dataJson);
-	});
+	const apiURl =
+		process.env.NODE_ENV === "production"
+			? "https://raw.githubusercontent.com/potts-point-laundry/potts-point-laundry.github.io/master/data.json"
+			: "/data.json";
+	return axios.get<APIData>(apiURl).then((response) => response.data);
 };
 
 export const GetShopDetails = async (): Promise<IShopDetails[]> => {
